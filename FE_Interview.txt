@@ -87,38 +87,299 @@ It's a key extension point that allows users to customize the behavior of Redux'
 
 9. Explain data flow in Redux?
 
-
+Redux uses a "one-way data flow" app structure
+The UI dispatches an action. The store runs the reducers, and the state is updated based on what occurred. The store notifies the UI that the state has changed.
 
 10. What is Redux-Thunk
+Redux Thunk is a middleware that allows you to write functions that interact with a Redux store. 
+These functions are called "thunks" and are used to perform asynchronous actions, such as making HTTP calls.
+
+11. What is Redux-Saga ?
+Redux-Saga is a middleware library for Redux that manages side effects in JavaScript applications. 
+It's designed to make it easier to handle complex data flows and side effects. 
+
+12. Difference between Redux-thunk and Redux-saga ?
+Both Redux Thunk and Redux Saga take care of dealing with side effects. 
+In most of the scenarios, Thunk uses Promises to deal with them, whereas Saga uses Generators. 
+Thunk is simple to use and Promises are familiar to many developers,
+Sagas/Generators are more powerful but you will need to learn them. 
+But both middleware can coexist, so you can start with Thunks and introduce Sagas when/if you need them.
+
+13. Difference between class component and function component?
+        Functional Components                                                                              Class Components
+        
+        They are declared as a JavaScript function.                                                       Class Components are defined using JavaScript classes.
+        They are stateless component, but with the help of hooks, they can now manage state also.         They are stateful components by using the lifecycle methods.
+                                                                                                          The render method in a class component is responsible for returning JSX.
 
 
-11. What is Redux-Saga, 
+14. How can we implement componentWillUnmount in function component?
 
-12. Difference between Redux-thunk and Redux-saga
-● Difference between class component and function
-component
-● How can we implement componentWillUnmount in
-function component
-● useEffect,UseState, useMemo.useCallback hooks in
-Details
-● Explain lifecycle method in React js
-● What is difference between export default and export
-in React js
-● What is portal in React js
-● What is reconciliation in React js
-● What is useRef in React js
-● What is server side render in React js
-● What is useStrict in React js
-● What is fragment in React js
-● What is react router in React js
-● What is node module in React js
-● What is the default localhost server port in react js.
-how can we change the local server port
-● What is high order component in React js
-● What is pure component in React js
-● What is difference state and props in React js
-● How to optimize React js app
-● What is difference between React js and Angular js
+    To implement the equivalent of componentWillUnmount in a React function component, you use the useEffect hook and return a cleanup function within it; 
+    anything inside that returned function will execute when the component is unmounted. 
+
+
+15. useEffect,UseState, useMemo, useCallback hooks in Details
+
+These are essential hooks in React for managing state, side effects, and optimizing performance. Let's dive into each:
+1. useState:
+Purpose: Manages state within functional components.
+Syntax:
+JavaScript
+
+const [state, setState] = useState(initialState);
+Explanation:
+state: A variable holding the current state value.
+setState: A function to update the state value.
+initialState: The initial value of the state.
+Example:
+JavaScript
+
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+2. useEffect:
+Purpose: Performs side effects in functional components, like data fetching, subscriptions, or manual DOM manipulations.
+
+Syntax:
+JavaScript
+
+useEffect(() => {
+  // Side effect logic
+}, [dependencies]); 
+
+Explanation:
+The first argument is a function containing the side effect logic.
+The second argument (optional) is an array of dependencies. The effect will re-run if any of these dependencies change.
+Example:
+JavaScript
+
+import React, { useState, useEffect } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []); // Empty dependency array means it runs only once on mount
+
+  return (
+    <ul>
+      {data.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+3. useMemo:
+Purpose: Memoizes the result of a computation, preventing unnecessary recalculations.
+
+Syntax:
+JavaScript
+
+const memoizedValue = useMemo(() => {
+  // Computation logic
+}, [dependencies]); 
+
+Explanation:
+The first argument is a function that returns the computed value.
+The second argument is an array of dependencies. The computation will only re-run if any of these dependencies change.
+
+Example:
+JavaScript
+
+import React, { useMemo } from 'react';
+
+function ExpensiveCalculation({ num }) {
+  const computedValue = useMemo(() => {
+    // Perform expensive calculation here
+    return num * num;
+  }, [num]);
+
+  return <p>Result: {computedValue}</p>;
+}
+
+4. useCallback:
+Purpose: Memoizes a function, preventing unnecessary re-creation of the function instance.
+Syntax:
+JavaScript
+
+const memoizedCallback = useCallback(() => {
+  // Function logic
+}, [dependencies]); 
+
+Explanation:
+The first argument is the function to be memoized.
+The second argument is an array of dependencies. The function will only be re-created if any of these dependencies change.
+
+Example:
+JavaScript
+
+import React, { useCallback } from 'react';
+
+function Button({ onClick, label }) {
+  const handleClick = useCallback(() => {
+    onClick();
+  }, [onClick]);
+
+  return <button onClick={handleClick}>{label}</button>;
+}
+
+
+16. Explain lifecycle method in React js
+
+Lifecycle methods in React are special methods that get called at different stages of component's lifecycle.
+Mounting: When a component is being inserted into the DOM.
+Updating: When a component's state or props change.
+Unmouting: when a component is being removed from the DOM.
+
+class LifecycleDemo extends React.Component{
+    componentDidMount(){
+        console.log("component mounted"); //render once only.
+    }
+    componentDidUpdate(prevProps, prevState){ //gives prevProps and prevState
+        console.log("component updated"); 
+    }
+
+    componentWillUnmount(){
+        console.log("component will unmount"); //cleanup things
+    }
+
+    render(){
+        return <div> Lifecycle method</div>
+    }
+}
+
+
+17. What is difference between export default and export in React js?
+
+    In React (and JavaScript in general), both export default and export are used to make variables, functions, or classes available for use in other files.
+
+18. What is portal in React js?
+    In React, a portal is a way to render a component outside of its parent component's DOM hierarchy. 
+    This means you can render a component in a completely different part of the DOM tree, even outside the root React application container.
+
+17. What is reconciliation in React js?
+    Reconciliation is the process React uses to update the DOM efficiently.
+    It involves comparing the new Virtual DOM with the previous one and determining the minimum number of changes needed to update the actual DOM.
+
+18. What is useRef in React js?
+    The useRef hook is used to access and interact with DOM elements directly and to persist mutable values across renders without causing re-renders.
+
+19. What is server side render in React js?
+    Server-side rendering (SSR) in React.js is a technique where the initial rendering of a React component happens on the server, instead of the client's browser. 
+    The server sends the rendered HTML to the client, which then takes over and hydrates the HTML with JavaScript to make it interactive.
+
+
+20. What is useStrict in React js
+    In React, StrictMode is a development-only tool that helps you write better and more robust code. 
+    It does this by performing additional checks and warnings that highlight potential problems in your application.
+
+21. What is fragment in React js
+    In React, a fragment is a way to group multiple children's elements.
+    Using a Fragment prevents the addition of unnecessary nodes to the DOM.
+
+        <Fragment>
+            <div>vijay</div>
+            <div>reactjs</div>
+        </Fragment>
+
+22. What is react router in React js?
+    
+    React Router: React Router is a library for handling routing and enables navigation and rendering of different component based on the URL.
+
+23. What is node module in React js
+    In React.js, a Node module is a reusable piece of JavaScript code that can be included in your project to provide specific functionality.
+    Node_modules –libraries are present inside the node modules.
+
+
+24. What is the default localhost server port in react js.
+    The default localhost server port in React.js is 3000.
+    This means that when you start your development server using npm start, your application will typically be accessible at http://localhost:3000/ in your web browser.
+
+25. how can we change the local server port
+    You can change the local server port in React.js in a few ways:
+    1. Using the PORT environment variable:
+    Directly in the command line.
+    Code
+
+   PORT=3001 npm start
+    In your package.json.
+    Code
+
+   "scripts": {
+     "start": "PORT=3001 react-scripts start"
+   }
+    2. Using the .env file:
+    Create a .env file in the root of your project.
+    Add the following line:
+    Code
+
+    PORT=3001
+    Now, when you run npm start, it will use port 3001.
+    3. Using cross-env (for Windows compatibility):
+    Install the cross-env package.
+    Code
+
+    npm install cross-env --save-dev
+    Update your package.json scripts.
+    Code
+
+   "scripts": {
+     "start": "cross-env PORT=3001 react-scripts start"
+   }
+
+
+26. What is high order component in React js
+    A Higher-Order Component (HOC) is a function that takes a component and returns a new component with added functionality.
+    HOCs are used for reusing component logic and enhancing components with additional behavior.
+
+27. What is pure component in React js
+    In React, a pure component is a component that only re-renders if its props or state have changed. 
+    This is in contrast to regular components, which will re-render even if their props or state haven't changed.
+
+28. What is difference state and props in React js
+    button --> counter value  1-->2 --> 3 value is stored in state.
+
+    In React, state is an object that represents the parts of the app that can change. 
+    Each component can have its own state, which can be managed within the component and used to render the UI.
+    When the state changes, React re-renders the component to reflect the new state.
+    Props(properties) are way to pass data from a parent component to a child component.
+
+
+29. How to optimize React js app
+    Using useMemo and useCallback to memoize expensive calculations and functions.
+    Implementing shouldComponentUpdate or using React.memo for Pure Components.
+    Code Splitting and lazy loading.
+
+30. What is difference between React js and Angular js
+
+React and Angular both are used to create single page UI applications using components.
+
+React                                                                        Angular
+
+1. React is a Javascript Library.                                           1. Angular is a complete Framework.
+2. React uses virtual DOM which makes it faster.                            2. Angular uses a real DOM.
+3. React is smaller in size and lightwight and therefore faster sometime.   3. Angular is bigger because it is a complete framework.
+4. React depends on external libraries for many complex features, so        4. Since Angular is a complete framework, therfore it provide built-in support for features like routing, forms, validation and HTTP requests.
+developer has to write many lines of code for complex functionalities
+
+5. React is simple to learn and more popular than Angular.                  5. Angular is slightly difficult to learn as it has Typescipt, OOPS concept and many more thing.
+
+
 ● What is prop drilling in React js how to overcome it
 ● What is context api in React js
 ● What is super, constructor, render function in React js
