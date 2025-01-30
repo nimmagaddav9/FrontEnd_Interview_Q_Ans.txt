@@ -1,19 +1,100 @@
 React Js Interview Question
 
 1. What is React js ?
-● What is difference between virtual dom and shallow
-dom, dom in React js
-● What is controlled and uncontrolled component in
-React js
-● What is hooks in React js
-● What is jsx, babel, webpack
-● What is Redux
-● What is reducer, action, store in Redux
-● What is middleware in Redux
-● Explain data flow in Redux
-● What is Redux-Thunk
-● What is Redux-Saga, Difference between
-Redux-thunk and Redux-saga
+
+    ReactJS is the JavaScript Library.
+    Facebook
+    ReactJS used to develop web applications.
+    - we will develop ReactJS applicatons in two ways.
+
+        1) JSX
+            (JavaScript and XML)
+            JSX won't follow the oops
+        2)TypeScript
+            Programming Language
+            Microsoft
+            TypeScript follows the OOPS.
+
+2. What is difference between virtual DOM and shallow DOM, DOM in React js
+	- In Virtual DOM line of code is changed. Processing done in change line of code.
+	- Real DOM it will process the whole code. 
+    - Virtual DOM is faster then real DOM.
+
+In React.js, the DOM (Document Object Model) represents the structure of your web page. Manipulating the DOM directly can be slow, 
+so React uses two different techniques to optimize this process: the Virtual DOM and Shallow Rendering
+Key Differences:
+Purpose: Virtual DOM is for optimizing performance during updates, while Shallow Rendering is for testing components in isolation.
+Scope: Virtual DOM represents the entire application, while Shallow Rendering only renders a single component one level deep.
+DOM Interaction: Virtual DOM interacts with the real DOM, while Shallow Rendering doesn't.
+
+3. What is controlled and uncontrolled component in React js?
+Controlled component - form data can be handled react.
+Uncontrolled component - form data can be handled by DOM.
+
+4. What is hooks in React js?
+16.8.They let you use state and other React features without writing a class. 
+Because of this, class components are generally no longer needed. 
+Although Hooks generally replace class components, there are no plans to remove classes from React.
+
+useState
+
+useEffect
+
+useContext
+
+useReducer
+
+useMemo
+
+useCallback
+
+useRef
+
+useState: Manages state in functional components.  
+useEffect: Manages side effects in functional components. 
+useContext: Consumes context in functional components.  
+useReducer: Manages state with a reducer function. For more complex state management
+useRef: Accesses DOM elements or stores mutable values.  
+useCallback: performance improvement usecase  
+useMemo: performance improvement usecase
+
+5. What is jsx, babel, webpack?
+
+JSX stands for JavaScript XML. 
+It's a syntax extension for JavaScript that allows you to write HTML-like structures within your JavaScript code.
+
+Babel is the inbuilt tool of ReactJS, used to convert the "JSX" or "TypeScript" to Equivalent "JS".
+
+Webpack takes all your JavaScript, CSS, images, and other assets and combines them into a few optimized files that can be easily loaded by a browser.
+
+
+6. What is Redux?
+used to implement the "state management".
+We have redux thux, redux saga.
+Redux thunx is an outdated library.
+Saga is Advanced library.
+
+7. What is reducer, action, store in Redux?
+reducer - Business logic
+Input parameters --> Actions.
+Request method is called Dispatch
+Response method is called Subscribe.
+Store - Main Server
+
+8. What is middleware in Redux?
+Middleware in Redux is a function that allows users to modify actions and state changes before they reach the reducer. 
+It's a key extension point that allows users to customize the behavior of Redux's dispatch function. 
+
+9. Explain data flow in Redux?
+
+
+
+10. What is Redux-Thunk
+
+
+11. What is Redux-Saga, 
+
+12. Difference between Redux-thunk and Redux-saga
 ● Difference between class component and function
 component
 ● How can we implement componentWillUnmount in
