@@ -380,85 +380,456 @@ developer has to write many lines of code for complex functionalities
 5. React is simple to learn and more popular than Angular.                  5. Angular is slightly difficult to learn as it has Typescipt, OOPS concept and many more thing.
 
 
-● What is prop drilling in React js how to overcome it
-● What is context api in React js
-● What is super, constructor, render function in React js
+31. What is prop drilling in React js how to overcome it?
+Prop drilling is the process of passing down props through multiple layers of components.
+5 ways to avoid Prop Drilling
+
+1. Using Context API
+2. using Redux
+3. using Component Composition
+4. using Callback Functions
+5. Using Custom Hooks
+
+32. What is context api in React js?
+Context API in React provides a way to share values(like data or functions) between components without having 
+to pass props through every level of the component tree. It is used to avoid the prop drilling.
+
+
+33. What is super, constructor, render function in React js?
+
+super keyword is used in the constructor of a class component to call the constructor of the parent class.
+This is necessary to ensure that the initialization logic of the parent class is executed.
+
+Constructor()
+
+constructor is a special method that is called when an instance of the class is created.
+Constructor is used to intializing the component's state or performing any setup that is needed before the component is rendered.
+
+Render() method returns the React elements that will be rendered to the DOM.
+
 HTML interview question
-● What is <!Doctype html> in Html5
-● What is difference between div and span in Html
-● What is semantic tags and non semantic tags in
-Html
-● What is difference between html and html5
-● What is Iframe tag in Html5
-● What are the formatting tags in html
-● What is difference <b> and <Strong> in html
-● What is view port attribute in html
-● What is attribute in html
-● What is block level element and inline element in
-html
-● What is difference between Html and Html5
+
+34. What is <!Doctype html> in Html5
+In HTML5, "<!DOCTYPE html>" is a declaration at the beginning of an HTML document that tells the web browser the document is written using the HTML5 standard, 
+essentially instructing the browser to render the page using the latest HTML rules and features;
+it's considered a "Document Type Declaration" and is always the first line of code in an HTML file. 
+
+
+35. What is difference between div and span in Html
+A div element is used for block-level organization and styling of page elements,
+whereas a span element is used for inline organization and styling.
+
+
+36. What is semantic tags and non semantic tags in Html
+
+In HTML, "semantic tags" are elements that clearly define the meaning of the content they enclose, indicating its role on the page, 
+while "non-semantic tags" are elements like <div> and <span> that simply hold content without conveying any specific meaning about what that content represents; essentially, 
+semantic tags provide context and structure to the content, while non-semantic tags are just containers for styling purposes. 
+
+
+Tags like <header>, <nav>, <article>, <section>, and <footer> are considered semantic because they explicitly describe the purpose of the content within them. 
+
+37. What is difference between html and html5
+Unlike older versions of HTML, which allowed you to create primarily static sites that needed to be spiced up with CSS and JavaScript,
+HTML5 is much more dynamic and includes multimedia elements. 
+It natively supports video and audio, and you can even make games or animations with it.
+
+
+
+38. What is Iframe tag in Html5?
+An inline frame (iframe) is a HTML element that loads another HTML page within the document.
+It essentially puts another webpage within the parent page. 
+They are commonly used for advertisements, embedded videos, web analytics and interactive content.
+
+
+39. What are the formatting tags in html?
+HTML formatting tags change the appearance of text on a web page. They can make text bold, italic, underlined, or more. 
+Examples of HTML formatting tags
+Bold tag: The <b> tag makes text bold 
+Italic tag: The <i> tag makes text italic 
+Underline tag: The <u> tag underlines text 
+Emphasis tag: The <em> tag emphasizes text in a paragraph 
+Preformatted text tag: The <pre> tag displays text in a fixed-width font and preserves line breaks and spaces 
+Span element: The <span> tag is a generic inline container that can be used to separate parts of text 
+
+
+
+
+40. What is difference <b> and <Strong> in html
+The element <b> creates the boldface without adding semantic significance to the text within it. 
+Conversely, the tag <strong> emphasizes the importance of the text within its content. 
+
+
+
+41. What is view port attribute in html
+
+In HTML, the "viewport" attribute is a meta tag that instructs the browser how to control the dimensions and scaling of a web page on different devices
+<meta name="viewport" content="width=device-width, initial-scale=1.0">. 
+
+
+42. What is attribute in html?
+HTML attributes provide additional information about HTML elements.
+The <a> tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:
+<a href="https://www.w3schools.com">Visit W3Schools</a>
+
+43. What is block level element and inline element in html?
+
+In HTML, a "block level element" always starts on a new line and takes up the full width available, 
+while an "inline element" does not start on a new line and only occupies the space required by its content, 
+essentially flowing with the surrounding text; 
+examples of block elements include <p> (paragraph) and <div>, and examples of inline elements include <span> and <a> (link). 
+
+44. What is difference between Html and Html5
+
+Html                                                            Html5
+no audio, video tags                                            Supports video and audio elements. 
+                                                                <header>, <nav>, <main>, and <footer> to better define the structure and meaning of a webpage.                                                              
+                                                                HTML5 is designed to be more responsive and adaptable to different screen sizes, making it better suited for mobile devices. 
+
 Css Interview Question
-● What is difference between css and css3
-● What are the selector in css
-● What is media query in css
-● What is different position in css
-● What is bom in css
-● What is difference between PX,unit,em,rem in
-css
-● What is flex box in css
-● What is pseudo selector in css
-● How to make website responsive
-● What are breakpoint for viewport responsive
-device
-● Why we use box-sizing in css
+
+45. What is difference between css and css3
+CSS is the foundational Cascading Style Sheets language used to style web pages, 
+while CSS3 is a newer version of CSS that introduces advanced features like animations, transitions, rounded corners, gradients, and more complex selectors, allowing for more dynamic and visually appealing web designs
+
+46. What are the selector in css
+
+
+47. What is media query in css
+A "media query" in CSS is a technique that allows you to apply specific styles to a webpage based on certain conditions related to 
+the user's device, like screen size, orientation, resolution, or other features.
+
+48. What is different position in css
+The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
+
+49. What is bom in css
+"BOM" stands for "Browser Object Model," which refers to a collection of objects provided by a web browser that allows JavaScript to 
+interact with the browser itself, including features like window manipulation, history access, and location changes; 
+it is not directly related to CSS, but is used in conjunction with it through JavaScript to control the browser environment. 
+
+50. What is difference between PX,unit,em,rem in css
+In CSS, "px" stands for pixels, a fixed unit of measurement, while "em" and "rem" are relative units that scale based on the
+font size of the parent element (em) or the root HTML element (rem), making "rem" generally preferred for consistent scaling across
+a website; "unit" is a broader term referring to any measurement used in CSS, including pixels, ems, rems, percentages, etc. 
+
+
+51. What is flex box in css
+In CSS, "flexbox" (short for "flexible box layout") is a layout method that allows you to arrange elements in rows or columns, 
+where items can dynamically grow or shrink to fit the available space within a container
+
+
+52. What is pseudo selector in css
+A "pseudo selector" in CSS refers to a keyword added to a regular selector that allows you to 
+style an element based on its specific state or a particular part of it, without actually creating a new HTML element
+
+
+53. How to make website responsive
+Responsive web design is about creating web pages that look good on all devices!
+A responsive web design will automatically adjust for different screen sizes and viewports.
+
+54. What are breakpoint for viewport responsive device
+Viewport breakpoints are browser dimensions that indicate when a website's layout and styling should change.
+
+55. Why we use box-sizing in css
+In CSS, "box-sizing" is used to control how the width and height of an element are calculated, 
+allowing you to specify whether padding and borders should be included within the defined dimensions of an element,
+making layout design more predictable and consistent, especially when applying padding and borders to multiple elements on a page. 
+
 Javascript interview Question
-● What is Ecmascript in Javascript
-● What is difference between let ,cons and var
-● What is spread operator, Rest operator ,
-default parameter
-● What is deep copy and shallow copy in
-Javascript
-● What is promise , callback function , async await
-in in Javascript
-● What is difference between promise and
-callback in Javascript
-● What is event bubbling and event capturing in
-Javascript
-● What is higher order function in Javascript
-● Explain different-2 types of function in Javascript
-● What is arrow function in Javascript
-● Why we use call, apply bind method in
-Javascript
-● How many way to create object in Javascript
-● What is prototype inheritance in Javascript
-● What is typescript
-● What are the array method , string method
-● What is difference between java and javascript
-● What is throttling and debouncing in js
-● What is Null and undefined in javascript
-● What are the falsy values in javascript
-● What is execution context, event loop ,stack,
-call queue,microtask queue in Javascript
-● What is setTimeOut and setInterval in Javascript
-● What is object.seal and object.freeze in
-Javascript
-● What is difference between map and set in
-Javascript
-● What is Weakmap and Weakset in Javascript
-● What is sessionStorage, localStorage , cookie,
-● Write a program to sort an array
-● What is use of json.stringify and json parse()
-method in Javascript
-● What are is map, filter , reducer in javascript
-● What is generator function in Javascript
-● How to stop event propagation in Javascript
-● What is closure in Javascript
-● What is housing in Javascript
-● What is dead zone in Javascript
-● What is function currying in Javascript
-● What is mutation observer in Javascript
-● What is memorization in javascript
-● Write a program to find element occurence in
+
+56. What is Ecmascript in Javascript
+ECMAScript is the standardized specification that defines the JavaScript programming language.
+ECMAScript:
+The standard upon which JavaScript is based. 
+It provides the rules, syntax, and features that all JavaScript implementations must adhere to.
+
+57. What is difference between let ,cons and var
+While let and const are block-scoped, var declarations are either globally scoped or function-scoped. 
+Let variables can be updated but not re-declared, 
+const variables cannot be updated or re-declared, and var variables may both be updated and re-declared inside their scope.
+
+
+58. What is spread operator, Rest operator , default parameter
+Spread Operator (...)
+Expands an iterable object (like an array, string, or object literal) into its individual elements.
+Used to:
+Concatenate arrays:
+JavaScript
+
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const combined = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+
+
+Rest Operator (...)
+Collects multiple function arguments into an array.
+Used to:
+Create functions that accept a variable number of arguments:
+JavaScript
+
+        function printNumbers(first, second, ...rest) {
+          console.log(first); // 1
+          console.log(second); // 2
+          console.log(rest); // [ 3, 4, 5 ]
+        }
+        printNumbers(1, 2, 3, 4, 5);
+
+
+Default Parameter
+Assigns a default value to a function parameter if no value or undefined is passed during the function call.
+Used to:
+Make functions more flexible and prevent errors when arguments are missing:
+JavaScript
+
+        function greet(name = "Guest") {
+          console.log(`Hello, ${name}!`);
+        }
+        greet(); // Hello, Guest!
+        greet("John"); // Hello, John!
+
+59. What is deep copy and shallow copy in Javascript
+In JavaScript, shallow copy and deep copy are two ways of creating a copy of an object or an array.
+
+Shallow Copy:
+A shallow copy creates a new object or array, but it only copies references to the nested objects or arrays.
+Examples of shallow copy methods:
+Spread operator (...).
+JavaScript
+
+  const original = [1, 2, [3, 4]];
+  const shallowCopy = [...original];
+
+  shallowCopy[2].push(5); 
+  console.log(original); // [1, 2, [3, 4, 5]]
+
+Deep Copy:
+A deep copy creates a completely new object or array, including all nested objects and arrays.
+
+Examples of deep copy methods:
+JSON.parse(JSON.stringify()).
+JavaScript
+
+  const original = { a: 1, b: { c: 2 } };
+  const deepCopy = JSON.parse(JSON.stringify(original));
+
+  deepCopy.b.c = 3;
+  console.log(original); // { a: 1, b: { c: 2 } } 
+
+
+
+60. What is promise , callback function , async await in Javascript
+Promises
+    --------
+        - Promises Establishes the communication between "producer" and "consumer".
+ 
+        - Promises also called as "special javascript objects".
+ 
+        - we will create Promises by using "Promise" class constructor.
+ 
+        - Promises have 3 states
+ 
+            1) success  (resolve)
+ 
+            2) error    (reject)
+ 
+            3) pending
+ 
+        - we will consume promises by using "then()"
+
+callbacks?  - Passing "one function" to "another function" as an argument called as "CallBack"
+
+Async and Await()? To consume the promise we call async and await instead of then(). Latest released in ES9.
+
+61. What is difference between promise and callback in Javascript
+In JavaScript, both promises and callbacks are used to handle asynchronous operations, but they differ in their approach and syntax.
+
+62. What is event bubbling and event capturing in Javascript
+DOM elements are HTML Element. Parent , Child, Subchild.
+
+Click Subchild -->Subchild, Child, Parent will execute.
+
+The Events are propagating from down to top is called Event Bubbling.
+Propagation of Events from top to bottom is called Event Capturing.
+
+63. What is higher order function in Javascript
+
+In JavaScript, a higher-order function is a function that: 
+* Takes one or more functions as arguments, or
+* Returns a function as its result.
+
+Common Examples of Higher-Order Functions in JavaScript:
+map(): Creates a new array by applying a function to each element of an existing array.
+filter(): Creates a new array containing only the elements that pass a certain test specified by a function.
+reduce(): Combines all the elements of an array into a single value using a function.
+forEach(): Executes a function for each element in an array.
+Example:
+JavaScript
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map() to double each number
+const doubled = numbers.map(num => num * 2); 
+
+console.log(doubled); // [2, 4, 6, 8, 10]
+
+64. Explain different-2 types of function in Javascript
+65. What is arrow function in Javascript
+66. Why we use call, apply bind method in Javascript
+67. How many way to create object in Javascript
+68. What is prototype inheritance in Javascript
+69. What is typescript
+70. What are the array method , string method
+71. What is difference between java and javascript
+72. What is throttling and debouncing in js
+73. What is Null and undefined in javascript
+74. What are the falsy values in javascript
+75. What is execution context, event loop ,stack, call queue,microtask queue in Javascript
+76. What is setTimeOut and setInterval in Javascript
+77. What is object.seal and object.freeze in Javascript
+78. What is difference between map and set in Javascript
+79. What is Weakmap and Weakset in Javascript
+
+
+80. What is sessionStorage, localStorage , cookie?
+
+In web development, "sessionStorage", "localStorage", and "cookie" are all mechanisms used to store data on a user's browser, 
+but they differ in terms of data persistence: 
+sessionStorage stores data temporarily within a single browser session, 
+localStorage stores data persistently across browser sessions, 
+and cookies are small data files that can be configured to persist for a set duration and are often used to track user 
+activity across different pages on a website; with cookies being the only option that can be sent to the server with every request.
+
+81. Write a program to sort an array
+
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap elements
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+const arr = [5, 2, 8, 1, 9];
+console.log(bubbleSort(arr)); // Output: [1, 2, 5, 8, 9]
+Explanation:
+bubbleSort Function:
+Takes an array as input.
+Iterates through the array multiple times, comparing adjacent elements.
+If an element is greater than the next one, it swaps them.
+This process continues until the entire array is sorted.
+arr Variable:
+Holds the array to be sorted.
+console.log:
+Prints the sorted array to the console.
+
+82. What is use of json.stringify and json parse() method in Javascript
+In JavaScript, JSON.stringify() and JSON.parse() are used to convert data between JavaScript objects and JSON (JavaScript Object Notation) strings.
+
+83. What are is map, filter , reducer in javascript
+In JavaScript, map, filter, and reduce are array methods that allow you to iterate over an array and perform transformations or computations on its elements.
+1. Map:
+Purpose: Creates a new array by applying a function to each element of the original array.
+Syntax: array.map(callback(element, index, array))
+
+2. Filter:
+Purpose: Creates a new array containing elements that pass a test specified by a callback function.
+Syntax: array.filter(callback(element, index, array))
+
+3. Reduce:
+Purpose: Reduces an array to a single value by applying a callback function to each element and accumulating the result.
+Syntax: array.reduce(callback(accumulator, currentValue, index, array), initialValue)
+
+84. What is generator function in Javascript?
+
+In JavaScript, a generator function is a special type of function that can pause and resume its execution, 
+allowing you to generate a sequence of values on demand.
+
+85. How to stop event propagation in Javascript
+
+To stop event propagation in JavaScript, you can use the stopPropagation() method on the event object:
+JavaScript
+
+function handleClick(event) {
+  // Do something with the event
+
+  // Prevent the event from bubbling up to parent elements
+  event.stopPropagation();
+}
+
+86. What is closure in Javascript?
+    Closure
+    -------
+        - if any inner function holding the outer function data, then such scenario called as closure.
+        <script>
+    function fun_one(){
+        var x = 10;
+        var y = 20;
+        return ()=>{
+            console.log(x);
+            console.log(y);
+        }
+    };
+    console.dir( fun_one() );  //0: Closure (fun_one) {x: 10, y: 20}
+  
+</script>
+
+
+87. What is hoisting in Javascript ?
+
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their scope before code execution. 
+
+Variable Hoisting:
+With var, the declaration is hoisted, but the assignment is not.
+JavaScript
+
+    console.log(x); // Output: undefined
+    var x = 5;
+
+Function Hoisting:
+Function declarations are fully hoisted. This means you can call a function before it's defined in your code.
+JavaScript
+
+    sayHello(); // Output: "Hello!"
+
+    function sayHello() {
+      console.log("Hello!");
+    }
+
+
+88. What is dead zone in Javascript ?
+
+In JavaScript, the "dead zone" refers to the Temporal Dead Zone (TDZ). 
+It's a behavior associated with variables declared using let and const.
+Scope:
+The TDZ exists within the scope of a variable declared with let or const. 
+It starts from the beginning of the scope and ends when the variable is declared and initialized.
+
+89. What is function currying in Javascript?
+
+• converting the complex level business logic to readable code is called currying.
+• loosely coupled code is nothing but currying.
+* converting tighlty couple code to easily readeable code is currying.
+
+90. What is mutation observer in Javascript?
+
+In JavaScript, a MutationObserver is an API that allows you to watch for changes being made to the DOM tree. 
+It provides a way to react to changes like:
+Node addition or removal: When elements are added or removed from the DOM.
+Attribute changes: When an attribute of an element is modified.
+Text content changes: When the text content of a node is altered.
+
+91. What is memoization in javascript?
+Memoization is an optimization technique in JavaScript that can significantly improve the performance of your code, 
+especially when dealing with computationally expensive or frequently called functions.
+
+
+92. Write a program to find element occurence in
 array
 const arr = [1,1,2,3,1,4]
 const count = {};
