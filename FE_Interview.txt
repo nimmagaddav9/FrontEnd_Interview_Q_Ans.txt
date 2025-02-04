@@ -672,23 +672,186 @@ const doubled = numbers.map(num => num * 2);
 
 console.log(doubled); // [2, 4, 6, 8, 10]
 
-64. Explain different-2 types of function in Javascript
-65. What is arrow function in Javascript
-66. Why we use call, apply bind method in Javascript
-67. How many way to create object in Javascript
-68. What is prototype inheritance in Javascript
-69. What is typescript
-70. What are the array method , string method
+64. Explain different-2 types of function in Javascript?
+
+Arrow Function:
+Syntax.
+JavaScript
+
+const functionName = (parameters) => {
+  // function body
+};
+Shorter syntax: Arrow functions provide a more concise syntax, especially for simple functions.
+
+Generator Function:
+Syntax.
+JavaScript
+
+function* functionName(parameters) {
+  // function body with yield statements
+}
+Pausable Functions: Generator functions can be paused and resumed, allowing them to produce a sequence of values over time.
+
+
+
+65. What is arrow function in Javascript?
+In JavaScript, an arrow function is a concise way to write a function expression. It was introduced in ECMAScript 6 (ES6). 
+Syntax:
+JavaScript
+
+(parameters) => { 
+   // function body 
+}
+
+
+66. Why we use call, apply bind method in Javascript?
+
+Call() -- if we want to create second memory location will interact with 1st memory location.
+
+Apply – if we want to pass array instead of independent parameter
+
+Bind() - merge memory location 1 and memory location 2 -->merge 2 memory locations-->new memory location.
+
+67. How many way to create object in Javascript?
+
+In JavaScript, there are several ways to create objects:
+1. Object Literals:
+This is the simplest and most common way to create an object.
+JavaScript
+
+const person = {
+  name: "John",
+  age: 30,
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+
+2. Constructor Functions:
+This is a function that creates an object when called with the new keyword.
+JavaScript
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function() {
+    console.log("Hello!");
+  };
+}
+
+const john = new Person("John", 30);
+
+
+68. What is prototype inheritance in Javascript?
+Prototype inheritance is a fundamental concept in JavaScript that allows objects to inherit properties and methods from other objects. 
+
+
+69. What is typescript?
+
+TypeScript is a programming language that adds static typing to JavaScript.
+It's a superset of JavaScript, which means you can write plain JavaScript with additional features. 
+
+70. What are the array method , string method?
+Array length
+Array toString()
+Array at()
+Array join()
+Array pop()
+Array push()
+
+Array shift()
+Array unshift()
+Array delete()
+Array concat()
+Array copyWithin()
+Array flat()
+Array splice()
+Array toSpliced()
+Array slice()
+
+The splice() method can be used to add new items to an array.
+
+The slice() method slices out a piece of an array into a new array.
+
 71. What is difference between java and javascript
-72. What is throttling and debouncing in js
-73. What is Null and undefined in javascript
-74. What are the falsy values in javascript
+
+Java is a compiled, object-oriented programming language used to create applications that can run on a virtual machine, 
+while JavaScript is a scripting language primarily used for adding interactivity to web pages within a browser
+
+72. What is throttling and debouncing in js?
+
+They are used to control the rate at which a function is executed in response to events like scrolling, resizing, or typing. 
+
+Debouncing:
+Purpose: Debouncing ensures that a function is only executed once after a certain period of inactivity. 
+If the function is called again within that period, the timer is reset.
+
+Throttling:
+Purpose: Throttling limits the frequency at which a function is executed, ensuring that it's called at most once per a specified interval.
+
+73. What is Null and undefined in javascript?
+In JavaScript, null and undefined are two distinct primitive values that represent the absence of a value, but with different meanings:
+Undefined:
+Meaning: A variable has been declared but has not been assigned a value. It's the default value for uninitialized variables.
+Example: 
+JavaScript
+
+  let x; 
+  console.log(x); // Output: undefined
+
+
+  Null:
+Meaning: Represents the intentional absence of any object value. It's a deliberate assignment to indicate that a variable has no value.
+
+Example:
+JavaScript
+
+  let y = null;
+  console.log(y); // Output: null
+
+74. What are the falsy values in javascript?
+
+In JavaScript, the following values are considered falsy:
+false, 0, -0, 0n (BigInt zero), "" (empty string), null, undefined, and NaN.
+Any value that is not in this list is considered truthy.
+
 75. What is execution context, event loop ,stack, call queue,microtask queue in Javascript
+
+ Execution Context: An environment where JavaScript code is executed.
+ Event Loop: The heart of JavaScript's concurrency model.
+ Call Stack:A LIFO (Last In, First Out) data structure that tracks the execution of functions.
+ Task Queue (Macrotask Queue): Holds tasks representing asynchronous operations like setTimeout, setInterval, I/O operations, and events.
+ Microtask Queue: Holds tasks with higher priority than tasks in the task queue.
+
+
 76. What is setTimeOut and setInterval in Javascript
-77. What is object.seal and object.freeze in Javascript
+
+setTimeout: Executes a function once after a specified delay (in milliseconds) and Syntax.
+setInterval: Repeatedly executes a function at a specified interval (in milliseconds) and Syntax.
+
+77. What is object.seal and object.freeze in Javascript?
+In JavaScript, Object.seal() and Object.freeze() are methods used to control the mutability of objects:
+Object.seal(): 
+
+Prevents the addition or removal of properties.
+Makes existing properties non-configurable (cannot change their attributes).
+Allows modification of existing property values (if they are writable).
+
+
+Object.freeze():
+Prevents the addition or removal of properties.
+Makes existing properties non-configurable.
+Makes existing properties non-writable (cannot change their values).
+
+
 78. What is difference between map and set in Javascript
+Map is a collection of ordered key/value pairs, and that a Set is a collection of unique values.
+
 79. What is Weakmap and Weakset in Javascript
 
+WeakMap()-->Takes JSON objects as keys
+Set()->Will not allow the duplicate values.
+WeakSet()-->Takes JSON objects as keys.
 
 80. What is sessionStorage, localStorage , cookie?
 
